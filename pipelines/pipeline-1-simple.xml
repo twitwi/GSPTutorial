@@ -1,0 +1,19 @@
+
+<pipeline>
+    <!-- this is an xml comment -->
+
+    <!-- defines a namespace/shortcut named "gsp", use after -->
+    <namespace gsp="fr.prima.gspbaseutils"/>
+
+    <!-- create a module named "cons" of type "gsp:Console" -->
+    <m id="cons" type="gsp:Console"/>
+
+    <!-- create a module named "for" of type "gsp:For" -->
+    <!-- and set 3 of its parameters -->
+    <m id="for" type="gsp:For" from="10" to="14" period="1000"/>
+
+    <!-- plug the "i" output of "for" into the "input" input of "cons" -->
+    <c chain="for#i - input#cons"/>
+
+</pipeline>
+

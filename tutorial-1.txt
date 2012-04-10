@@ -1,0 +1,28 @@
+
+Welcome to the GSP tutorial
+===========================
+
+GSP stands for “Generic Service Processor” but it is not that important.
+The GSP framework is a very lightweight component system that handles both Java and C(++) modules.
+It has been designed to make both using and writing modules as easy as possible.
+
+
+Downloading the GSP and some modules
+====================================
+
+For this tutorial, you will need some libraries including the framework and some module libraries.
+Just open the lib/GETALL.txt and download each http://... file into the lib folder.
+If you know/have “wget”, you can directly run the script with “sh ./GETALL.txt”.
+
+
+Additional installation on your computer
+========================================
+
+With the libraries above, you have actually more than the minimum that is required.
+However, you might want to do additional things like handling videos.
+Here is what you might need.
+* Linux: GStreamer: if you are using ubuntu, please install "libgstreamer0.10-dev" package
+* MacOS: GStreamer: (untested) try http://itee.uq.edu.au/~davel/gstreamer/
+* Windows: GStreamer: (untested) try http://code.google.com/p/ossbuild/
+* Linux: pipeline viewer: something like “aptitude install libsaxonb-java graphviz”
+* Other: pipeline viewer: to be done...
