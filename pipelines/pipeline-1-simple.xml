@@ -12,8 +12,18 @@
     <!-- and set 3 of its parameters -->
     <m id="for" type="gsp:For" from="10" to="15" period="500"/>
 
-    <!-- plug the "i" output of "for" into the "input" input of "cons" -->
-    <c chain="for#i - input#cons"/>
+    <!-- plug the "i" output of "for" into the "info" input of "cons" -->
+    <c chain="for#i - info#cons"/>
+
+
+    <!-- Here is a mostly equivalent pipeline using upper case for modules names.
+         This helps understing the first example but don't use it.
+
+        <m id="CONS" type="gsp:Console"/>
+        <m id="FOR" type="gsp:For" from="10" to="15" period="500"/>
+        <c chain="FOR#i - info#CONS"/>
+
+    end of comment -->
 
 </pipeline>
 

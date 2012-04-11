@@ -2,3 +2,46 @@
 Running an existing pipeline
 ============================
 
+A GSP pipeline defines an assembly of modules that are plugged together.
+
+Just running it
+---------------
+
+First we will just run a trivial pipeline that just counts from 10 to 15 (excluded).
+You can run it like this:
+
+   java -cp 'lib/*' fr.prima.gsp.Launcher pipelines/pipeline-1-simple.xml
+
+Alternatively, you can use the provide helper script:
+
+   ./run.sh   pipelines/pipeline-1-simple.xml
+
+The output might contain logging information.
+It should also contain the expected output:
+  J INFO: 10
+  J INFO: 11
+  J INFO: 12
+  J INFO: 13
+  J INFO: 14
+
+
+Understanding it
+----------------
+
+Please open the pipeline file (pipelines/pipeline-1-simple.xml) to understand what it does.
+Overall, the comments within the xml file should be sufficient to understand.
+
+The "m" tags stand for "module" (you can actually use module if you prefer), the "c" stands for "connector".
+Note that the order in the file is not important
+
+
+Visualizing it
+--------------
+
+If you want (and have the necessary stuff), you can visualize your pipeline file.
+In this tutorial the visualization are provided for some of the provided pipelines.
+For example, the first pipeline has its associated rendered view in:
+
+   pipelines/pipeline-1-simple.xml.svg
+
+SVG files can be viewed with image viewers or browsers.
