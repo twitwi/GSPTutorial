@@ -1,0 +1,45 @@
+
+Making your own modules
+=======================
+
+This tutorial uses video but you can nevertheless learn from it if you don't have a gstreamer setup.
+
+
+Writing and using a module
+--------------------------
+
+To make a Java module, you have to write the code, compile it and add the .class or .jar file in the classpath of the GSP Launcher.
+
+We provide some source code for a module that you could have written and that you can edit:
+
+   simplecode/OverlayInfo.java
+
+To compile it, you need to use javac:
+
+   javac simplecode/OverlayInfo.java
+
+The "run.sh" script is already containing the proper classpath setting. If you don't use it, you need to add "." to your classpath. For example you can run the test pipeline that uses this new module with:
+
+   java -cp 'lib/*:.' fr.prima.gsp.Launcher pipelines/pipeline-4-custom-module.xml
+or
+   ./run.sh pipelines/pipeline-4-custom-module.xml
+
+
+Playing with it
+---------------
+
+Please have a look at the code and the pipeline (pretty simple):
+
+   simplecode/OverlayInfo.java
+   pipelines/pipeline-4-custom-module.xml
+   pipelines/pipeline-4-custom-module.xml.svg
+
+Then you can play with the parameters of the pipeline:
+
+   ./run.sh pipelines/pipeline-4-custom-module.xml
+   ./run.sh pipelines/pipeline-4-custom-module.xml o.x=200
+   ./run.sh pipelines/pipeline-4-custom-module.xml o.x=150 o.y=150 o.rotationSpeed=.25
+   ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat="Hello GSP"
+
+You can also change the pipeline or edit (and recompile) the source code of the module.
+Have fun :)
