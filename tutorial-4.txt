@@ -1,0 +1,45 @@
+
+Understanding connectors/chains
+===============================
+
+This tutorial uses video but it “must” be read even if you haven't setup gstreamer.
+In the case you have gstreamer, it allows you to play a little with the video (see second section).
+
+
+Syntax and defaults for connector chains
+----------------------------------------
+
+To best understand the syntax of the connector chains, we provide a pipeline with some equivalent notations.
+You can view its representation in:
+
+    pipelines/pipeline-3-video-transform.xml.svg
+
+For the purpose of understanding, you can focus on the three modules "for", "in" and "view".
+To understand the connector syntax, you read the related comments in the pipeline file:
+
+    pipelines/pipeline-3-video-transform.xml
+
+
+Playing with the video
+----------------------
+
+First you can just run the pipeline that will open two windows: one with the video and one with the transformed video:
+
+      ./run.sh pipelines/pipeline-3-video-transform.xml
+
+Contrary to the previous tutorial, the execution will stop as soon as you close any of the windows (due to the exitOnClose="true").
+
+Then you can play with the parameters of the different modules:
+
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 view.enabled=false
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 view.enabled=false view2.enabled=false
+
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale .75 3"
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform=identity
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="crop 10 10 110 60 | scale 10 10"
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="crop 10 10 110 60 | scale 10 10 | threshold 0x0000FF 0X0000A0"
+
+
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-%08d.jpg
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-%08d.jpg view.enabled=false view2.enabled=false
+

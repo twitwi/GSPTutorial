@@ -11,6 +11,9 @@ Playing with the pipeline
 
    ./run.sh   pipelines/pipeline-2-view-video.xml
 
+You should see an uninteresting video.
+Please note that if you see and the moving box is red, then something need to be done but for now you can continue like this.
+
 Here again you can play with the parameters.
 The most interesting is probably the "period":
 

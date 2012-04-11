@@ -1,0 +1,61 @@
+
+<pipeline>
+
+    <namespace gsp="fr.prima.gspbaseutils"/>
+    <namespace gst="com.heeere.gsp.gstreamer"/>
+    <namespace vid="com.heeere.gsp.videotools"/>
+
+    <m id="cons" type="gsp:Console"/>
+    <m id="for" type="gsp:For" period="33"/>
+    <c chain="for#i - info#cons"/>
+
+    <!-- create an image source (that uses gstreamer), two views, a transformer and a saver -->
+    <m id="in"    type="gst:ImageSource"    uri="data/simple.avi"/>
+    <m id="view"  type="vid:ImageView"      exitOnClose="true" title="source image"/>
+    <m id="view2" type="vid:ImageView"      exitOnClose="true" title="transformed image"/>
+    <m id="save"  type="vid:ImageSave"      />
+    <m id="tr"    type="vid:ImageTransform" transform="scale 3 2"/>
+
+    <!-- plugging everything together (see big comment below to understand) -->
+    <c chain="for - in - view"/>  (THIS IS THE LINE DETAILLED BELOW) (btw, raw text is allowed in the pipeline)
+
+    <c chain="      in - tr - view2"/>  (indentation is just used to help understanding
+    <c chain="           tr - save"/>  
+    <c chain="in#end - interrupt#for"/> (this one says to stop the for when we reach the end of the video, if the windows are not opened)
+
+
+    <!-- above, the element """ chain="for - in - view" """ is fully equivalent to any of the following groups.
+
+    Defining each link in a dedicated "chain":
+       <c chain="for - in"/>
+       <c chain="in - view"/>
+
+    Making explicit the default inputs and outputs:
+       <c chain="for#output - input#in"/>
+       <c chain="in#output - input#view"/>
+    
+    Making explicit the defaults in a single chain:
+       <c chain="for#output - input#in#output - input#view"/>
+
+    Making explicit only some of the defaults in a single chain:
+       <c chain="for - in - input#view"/>
+
+    Some other variations:
+       <c chain="for - input#in#output - input#view"/>
+
+       <c chain="for - input#in#output - view"/>
+
+       <c chain="for - input#in# - view"/>
+
+       <c chain="for - #in#output - view"/>
+
+       <c chain="for - #in# - view"/>
+
+       <c chain="for-#in#-view"/>
+
+       <c chain="for-in-view"/>
+
+    end of comment -->
+
+</pipeline>
+
