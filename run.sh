@@ -5,4 +5,5 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.
 
 MOREOPT="-Djna.nosys=true"
 
-java -cp 'lib/*' $MOREOPT fr.prima.gsp.Launcher "$@"
+java -cp 'lib/*:.' $MOREOPT fr.prima.gsp.Launcher "$@"
+

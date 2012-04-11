@@ -1,0 +1,24 @@
+
+<pipeline>
+
+    <namespace gsp="fr.prima.gspbaseutils"/>
+    <namespace gst="com.heeere.gsp.gstreamer"/>
+    <namespace vid="com.heeere.gsp.videotools"/>
+    <namespace my="simplecode"/>
+
+    <!-- classical video modules -->
+    <m id="cons" type="gsp:Console"/>
+    <m id="for" type="gsp:For" period="1"/>
+    <c chain="for#i - info#cons"/>
+    <m id="in"   type="gst:ImageSource" uri="data/simple.avi"/>
+    <m id="view" type="vid:ImageView"   title="close me when done" exitOnClose="true"/>
+
+    <!-- our custom module -->
+    <m id="o" type="my:OverlayInfo"/>
+
+    <c chain="for - in - o - view"/>
+    <c chain="in#end - interrupt#for"/>
+
+
+</pipeline>
+
