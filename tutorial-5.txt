@@ -41,5 +41,6 @@ Then you can play with the parameters of the pipeline:
    ./run.sh pipelines/pipeline-4-custom-module.xml o.x=150 o.y=150 o.rotationSpeed=.25
    ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat="Hello GSP"
 
-You can also change the pipeline or edit (and recompile) the source code of the module.
-Have fun :)
+You can also change the pipeline or edit (and recompile) the source code of the module. Have fun :)
+
+   ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat="Keep Cool :)" in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s) o.x=80 o.y=70
