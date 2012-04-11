@@ -24,9 +24,13 @@ Here is what you might need.
 * GStreamer
   * Linux
       If you are using ubuntu, please install "libgstreamer0.10-dev" package.
-      Alternatively, if you have 
+      Alternatively, if you have gstreamer installed but you don't have the
+      "-dev" package, you can run
+      <pre>ln -s /usr/lib/libgstreamer-0.10.so.0 libgstreamer-0.10.so</pre>
 
-* MacOS: GStreamer: (untested) try http://itee.uq.edu.au/~davel/gstreamer/
-* Windows: GStreamer: (untested) try http://code.google.com/p/ossbuild/
-* Linux: pipeline viewer: something like “aptitude install libsaxonb-java graphviz”
-* Other: pipeline viewer: to be done...
+  * MacOS: (untested) try http://itee.uq.edu.au/~davel/gstreamer/
+  * Windows: (untested) try http://code.google.com/p/ossbuild/
+
+* For the pipeline viewer
+  * Linux: something like “aptitude install libsaxonb-java graphviz”
+  * Other: to be done...

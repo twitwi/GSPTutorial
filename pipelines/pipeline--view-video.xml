@@ -22,7 +22,7 @@
     <m id="view" type="vid:ImageView"   title="close me"/>
 
     <!-- plugging the "for" into the image source and the source into the view -->
-    <c chain="for - in - view"/>
+    <c chain="for - in"/>
 
     <!-- the "chain" above is fully equivalent to any of these groups
     Defining each link in a dedicated "chain":
