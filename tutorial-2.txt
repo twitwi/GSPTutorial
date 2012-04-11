@@ -38,19 +38,22 @@ Note that the order in the file is (mostly) not important.
 Visualizing it
 --------------
 
-If you want (and have the necessary stuff), you can visualize your pipeline file.
-In this tutorial the visualization are provided for some of the provided pipelines.
+In this set of tutorials the visualization of pipelines are provided.
 For example, the first pipeline has its associated rendered view in:
 
    pipelines/pipeline-1-simple.xml.svg
 
 SVG files can be viewed with image viewers or browsers.
 
+If you want (and have the necessary stuff), you can generate the visualization of a pipeline file, e.g., with:
+
+   ./GSP/PipelineViewer/view-pipeline.sh pipelines/pipeline-1-simple.xml
+
 
 Playing with parameters
 -----------------------
 
-As you have seen the xml file can be used to set the parameters of the modules.
+As you may have noticed, the xml file can be used to set the parameters of the modules.
 Usually, parameters have some default values and thus are optional in the pipeline (xml) file.
 
 In this example, for example, we provided 3 parameters but omitted all the other ones:

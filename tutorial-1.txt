@@ -38,7 +38,9 @@ Here is what you might need.
 
 Cloning some projects for later use
 ===================================
+
 git clone git://github.com/twitwi/GSP.git
 git clone git://github.com/twitwi/GSPGstreamer.git
 git clone git://github.com/twitwi/GSPVideoTools.git
+git clone git://github.com/rg3/youtube-dl.git
 
