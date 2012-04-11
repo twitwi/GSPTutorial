@@ -1,0 +1,27 @@
+
+<pipeline>
+
+    <namespace gsp="fr.prima.gspbaseutils"/>
+    <namespace gst="com.heeere.gsp.gstreamer"/>
+    <namespace vid="com.heeere.gsp.videotools"/>
+
+    <!-- create a module named "cons" of type "gsp:Console" -->
+    <m id="cons" type="gsp:Console"/>
+
+    <!-- create a module named "for" of type "gsp:For" -->
+    <m id="for" type="gsp:For" period="33"/>
+
+    <!-- plug the "i" output of "for" into the "info" input of "cons" -->
+    <c chain="for#i - info#cons"/>
+
+    <!-- create an image source (that uses gstreamer) and a view -->
+    <m id="in"   type="gst:ImageSource" uri="data/simple.avi"/>
+    <m id="view" type="vid:ImageView"   title="close me when done"/>
+
+    <!-- plugging them together (understand this is the goal of the tutorial) -->
+    <c chain="for - in - view"/>
+    <c chain="in#end - interrupt#for"/>
+
+
+</pipeline>
+

@@ -1,0 +1,21 @@
+
+Running an existing pipeline: example with videos
+=================================================
+
+This tutorial just applies the previous one on a pipeline with images/videos.
+If you want to do this tutorial, you need "gstreamer", see the tutorial-1 for details on its installation. 
+
+
+Playing with the pipeline
+-------------------------
+
+   ./run.sh   pipelines/pipeline-2-view-video.xml
+
+Here again you can play with the parameters.
+The most interesting is probably the "period":
+
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 cons.level=0
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=333 view.exitOnClose=true view.enabled=false
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.enabled=false
+

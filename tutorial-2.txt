@@ -32,7 +32,7 @@ Please open the pipeline file (pipelines/pipeline-1-simple.xml) to understand wh
 Overall, the comments within the xml file should be sufficient to understand.
 
 The "m" tags stand for "module" (you can actually use module if you prefer), the "c" stands for "connector".
-Note that the order in the file is not important
+Note that the order in the file is (mostly) not important.
 
 
 Visualizing it
@@ -45,3 +45,32 @@ For example, the first pipeline has its associated rendered view in:
    pipelines/pipeline-1-simple.xml.svg
 
 SVG files can be viewed with image viewers or browsers.
+
+
+Playing with parameters
+-----------------------
+
+As you have seen the xml file can be used to set the parameters of the modules.
+Usually, parameters have some default values and thus are optional in the pipeline (xml) file.
+
+In this example, for example, we provided 3 parameters but omitted all the other ones:
+* on "for", from="10" specified to start counting at 10
+* on "for", to="15" specified to count up to 15 (exclusive)
+* on "for", period="500" specified that we want to wait 500ms before each number
+* on "for", we omitted a parameter named "step" that defaults to 1 and allows to skip numbers while counting
+* on "cons", we omitted a parameter named "level" that defaults to 10 and controls the logging level, setting it to 5 or lower would disable the "info" messages
+* we omitted other parameters…
+
+One obvious way to change the parameters is to edit the pipeline file (xml).
+You can try to change the parameters by editing (a copy of) the file and running it again.
+
+More interestingly, you can set any parameter of any module from the command line.
+This allows for an easy testing of different parameters by overriding the values provided (or not) in the pipeline file.
+For example, you can try the following:
+
+    ./run.sh pipelines/pipeline-1-simple.xml   for.period=10
+    ./run.sh pipelines/pipeline-1-simple.xml   for.period=10 cons.level=0
+    ./run.sh pipelines/pipeline-1-simple.xml   for.period=100 for.to=50 for.step=2
+    ./run.sh pipelines/pipeline-1-simple.xml   for.period=10 for.to=150 for.step=5
+
+
