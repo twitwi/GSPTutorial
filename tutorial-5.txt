@@ -16,7 +16,7 @@ We provide some source code for a module that you could have written and that yo
 
 To compile it, you need to use javac:
 
-   javac simplecode/OverlayInfo.java
+   javac -cp lib/gsp-framework-1.1-SNAPSHOT.jar simplecode/OverlayInfo.java
 
 The "run.sh" script is already containing the proper classpath setting. If you don't use it, you need to add "." to your classpath. For example you can run the test pipeline that uses this new module with:
 

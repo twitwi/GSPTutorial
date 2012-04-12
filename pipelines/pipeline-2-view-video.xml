@@ -18,7 +18,7 @@
     <m id="in"   type="gst:ImageSource" uri="data/simple.avi"/>
     <m id="view" type="vid:ImageView"   title="close me when done"/>
 
-    <!-- plugging them together (understand this is the goal of the tutorial) -->
+    <!-- plugging them together (understanding this is the goal of the next tutorial) -->
     <c chain="for - in - view"/>
     <c chain="in#end - interrupt#for"/>
 

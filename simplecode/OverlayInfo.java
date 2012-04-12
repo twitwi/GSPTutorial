@@ -27,9 +27,11 @@ public class OverlayInfo extends AbstractModuleEnablable {
 
     public void input(BufferedImage im) {
         if (!isEnabled()) {
-            // it is good to make such modules enablable
+            // it is good to make such modules disablable
+            // isEnabled() is provided by the AbstractModuleEnablable parent class
             return;
         }
+
         // let's write directly on the image without copy...
         Graphics2D g = im.createGraphics();
         g.setColor(Color.RED);
@@ -37,14 +39,16 @@ public class OverlayInfo extends AbstractModuleEnablable {
         g.rotate(currentFrame * rotationSpeed * 3.14);
         g.scale(2., 2.);
         g.drawString(String.format(overlayFormat, currentFrame), -30f, 0f);
+
         // and send the result (same reference through our output).
         // by convention, we will have a (private) method for each output
         output(im);
+
         currentFrame++;
     }
 
     // By convention, we use a method for each output.
-    // Using the "emitEvent" automatically takes the name of the current method and use it as the name of the output output.
+    // Using the "emitEvent" automatically takes the name of the current method and uses it as the name of the output output.
     
     private void output(BufferedImage o) {
         emitEvent(o);
