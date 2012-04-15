@@ -7,7 +7,7 @@ then
     wget http://twitwi.github.com/maven-repo/snapshots/com/heeere/gsp/GSPVideoTools/1.0-SNAPSHOT/GSPVideoTools-1.0-SNAPSHOT.jar
     wget -U MyAgent/1.0 http://repo1.maven.org/maven2/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
     wget -U MyAgent/1.0 http://repo1.maven.org/maven2/com/googlecode/gstreamer-java/gstreamer-java/1.5/gstreamer-java-1.5.jar
-    wget https://oss.sonatype.org/content/groups/public/com/nativelibs4java/bridj/0.7-SNAPSHOT/bridj-0.7-20120401.185956-28.jar
+    wget http://bridj.googlecode.com/files/bridj-0.6.1.jar
 else
   echo "please run me from the lib/ folder"
 fi
