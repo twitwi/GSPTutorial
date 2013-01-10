@@ -23,13 +23,19 @@ However, you might want to do additional things like handling videos.
 Here is what you might need.
 * GStreamer
   * Linux
-      If you are using ubuntu, please install "libgstreamer0.10-dev" package.
+      If you are using ubuntu, please install "libgstreamer0.10-dev" and
+      "libgstreamer-plugins-base0.10-dev" packages.
       Alternatively, if you have gstreamer installed but you don't have the
-      "-dev" package, you can run
+      "-dev" package, you need to create some links to make it work. Try
+      something like:
+
+      * ubuntu before 12.10
       <pre>ln -s /usr/lib/libgstreamer-0.10.so.0 libgstreamer-0.10.so</pre>
+      * ubuntu 12.10
+      <pre>for i in /usr/lib/x86_64-linux-gnu/libgst*.so.0; do ln -s $i $(echo $(basename $i)|sed 's@[.]0$@@g' ); done</pre>
 
   * MacOS: (untested) try http://itee.uq.edu.au/~davel/gstreamer/
-  * Windows: (untested) try http://code.google.com/p/ossbuild/
+  * Windows: try http://code.google.com/p/ossbuild/
 
 * For the pipeline viewer
   * Linux: something like “aptitude install libsaxonb-java graphviz”
