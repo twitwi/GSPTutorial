@@ -3,7 +3,7 @@ Welcome to the GSP tutorial
 ===========================
 
 GSP stands for “Generic Service Processor” but it is not that important.
-The GSP framework is a very lightweight component system that handles both Java and C(++) modules.
+The GSP framework is a very lightweight component system that handles Java, C(++) modules and Python modules.
 It has been designed to make both using and writing modules as easy as possible.
 
 
@@ -42,8 +42,8 @@ Here is what you might need.
   * Other: to be done...
 
 
-Cloning some projects for later use
-===================================
+Cloning some projects for potential later use
+=============================================
 
 git clone git://github.com/twitwi/GSP.git
 git clone git://github.com/twitwi/GSPGstreamer.git
