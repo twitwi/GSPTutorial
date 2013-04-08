@@ -33,7 +33,15 @@ The most interesting are illustrated here:
    ./run.sh pipelines/pipeline-2-view-video.xml   for.period=333 view.exitOnClose=true
    ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.enabled=false
 
+Maybe, you can play from a webcam:
+
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=camera:0
+
 And, you can even play streaming videos:
 
-   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s)
+   # "despicable me" video
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/youtube-dl -g D_dvETGxO3w)
+
+   # keyboard madness video
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s)
 

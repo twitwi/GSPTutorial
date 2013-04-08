@@ -16,7 +16,7 @@ We provide some source code for a module that you could have written and that yo
 
 To compile it, you need to use javac:
 
-   javac -cp lib/gsp-framework-1.1-SNAPSHOT.jar simplecode/OverlayInfo.java
+   javac -cp lib/gsp-framework-2.0.jar simplecode/OverlayInfo.java
 
 The "run.sh" script is already containing the proper classpath setting. If you don't use it, you need to add "." to your classpath. For example you can run the test pipeline that uses this new module with:
 
@@ -43,4 +43,8 @@ Then you can play with the parameters of the pipeline:
 
 You can also change the pipeline or edit (and recompile) the source code of the module. Have fun :)
 
-   ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat="Keep Cool :)" in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s) o.x=80 o.y=70
+    # "despicable me" video
+    ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat='Despicable Me' in.uri=$(youtube-dl/youtube-dl -g D_dvETGxO3w) o.x=700 o.y=200 o.rotationSpeed=.04
+
+    # keyboard madness video
+    ./run.sh pipelines/pipeline-4-custom-module.xml o.rotationSpeed=.01 o.overlayFormat="Keep Cool :)" in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s) o.x=80 o.y=70

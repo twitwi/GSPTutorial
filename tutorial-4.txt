@@ -4,7 +4,7 @@ Understanding connectors/chains
 
 This tutorial uses video but it “must” be read even if you haven't setup gstreamer.
 In the case you have gstreamer, it allows you to play a little with the video (see second section).
-
+If you don't have gstreamer, you will learn the core syntax of connectors in the GSP framework
 
 Syntax and defaults for connector chains
 ----------------------------------------
@@ -27,6 +27,7 @@ First you can just run the pipeline that will open two windows: one with the vid
 
       ./run.sh pipelines/pipeline-3-video-transform.xml
 
+Please note that 2 windows get openened (and might be superposed depending on your window manager).
 Contrary to the previous tutorial, the execution will stop as soon as you close any of the windows (due to the exitOnClose="true").
 
 Then you can play with the parameters of the different modules:
@@ -39,9 +40,16 @@ Then you can play with the parameters of the different modules:
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="crop 10 10 110 60 | scale 10 10"
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="crop 10 10 110 60 | scale 10 10 | threshold 0x0000FF 0X0000A0"
 
+Saving image files to disk:
 
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-%08d.jpg
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-noview-%08d.jpg view.enabled=false view2.enabled=false
 
+And with the online videos:
+
+      # "despicable me" video
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/youtube-dl -g D_dvETGxO3w)
+
+      # keyboard madness video
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s)
 
