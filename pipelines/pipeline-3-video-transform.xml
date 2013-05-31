@@ -14,6 +14,7 @@
     <m id="view"  type="vid:ImageView"      exitOnClose="true" title="source image"/>
     <m id="view2" type="vid:ImageView"      exitOnClose="true" title="transformed image"/>
     <m id="save"  type="vid:ImageSave"      />
+    <m id="enc"   type="gst:VideoEncoder"   enabled="false" uri="test-video.webm" fps="25"/>
     <m id="tr"    type="vid:ImageTransform" transform="scale 3 2"/>
 
     <!-- plugging everything together (see big comment below to understand) -->
@@ -21,6 +22,7 @@
 
     <c chain="      in - tr - view2"/>  (indentation is just used to help understanding
     <c chain="           tr - save"/>  
+    <c chain="           tr - enc"/>  
     <c chain="in#end - interrupt#for"/> (this one says to stop the "for" when we reach the end of the video, if no window is open)
 
 
