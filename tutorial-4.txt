@@ -45,6 +45,10 @@ Saving image files to disk:
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-%08d.jpg
       ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 save.format=/tmp/saved-noview-%08d.jpg view.enabled=false view2.enabled=false
 
+Encoding a video (webm format):
+
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 enc.enabled=true tr.transform="crop 10 10 110 60 | scale 4 4"
+
 And with the online videos:
 
       # "despicable me" video

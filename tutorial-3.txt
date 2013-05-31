@@ -19,7 +19,7 @@ You can also have a look at the pipeline (both the sources and the visualization
    pipelines/pipeline-2-view-video.xml
    pipelines/pipeline-2-view-video.xml.svg
 
-((Please note that if you see and the moving box is red, then something need to be done but for now you can continue like this.))
+((Please note that if you see and the moving box is red, then something needs to be done, but for now you can continue like this.))
 
 
 Playing with the pipeline
