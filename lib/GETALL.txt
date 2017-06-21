@@ -6,9 +6,9 @@ then
     wget http://twitwi.github.com/maven-repo/releases/com/heeere/gsp/gsp-gstreamer/1.3/gsp-gstreamer-1.3.jar
     wget http://twitwi.github.com/maven-repo/releases/com/heeere/gsp/gsp-videotools/1.0/gsp-videotools-1.0.jar
     wget http://twitwi.github.com/maven-repo/releases/com/heeere/python27/0.5/python27-0.5.jar
-    wget -U MyAgent/1.0 http://repo1.maven.org/maven2/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
-    wget -U MyAgent/1.0 http://repo1.maven.org/maven2/com/googlecode/gstreamer-java/gstreamer-java/1.5/gstreamer-java-1.5.jar
-    wget http://bridj.googlecode.com/files/bridj-0.6.1.jar
+    wget http://central.maven.org/maven2/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
+    wget http://central.maven.org/maven2/com/googlecode/gstreamer-java/gstreamer-java/1.5/gstreamer-java-1.5.jar
+    wget http://central.maven.org/maven2/com/nativelibs4java/bridj/0.6.1/bridj-0.6.1.jar
 else
   echo "please run me from the lib/ folder"
 fi
