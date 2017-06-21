@@ -52,8 +52,8 @@ Encoding a video (webm format):
 And with the online videos:
 
       # "despicable me" video
-      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/youtube-dl -g D_dvETGxO3w)
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/bin/youtube-dl -g 6emgoLXHbjk)
 
       # keyboard madness video
-      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s)
+      ./run.sh pipelines/pipeline-3-video-transform.xml   for.period=1 tr.transform="scale 2 2" in.uri=$(youtube-dl/bin/youtube-dl -g iJ9wNT21c_s)
 

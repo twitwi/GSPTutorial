@@ -48,7 +48,7 @@ public class OverlayInfo extends AbstractModuleEnablable {
     }
 
     // By convention, we use a method for each output.
-    // Using the "emitEvent" automatically takes the name of the current method and uses it as the name of the output output.
+    // Using the "emitEvent" automatically takes the name of the current method and uses it as the name of the output.
     
     private void output(BufferedImage o) {
         emitEvent(o);

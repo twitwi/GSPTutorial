@@ -23,7 +23,7 @@ However, you might want to do additional things like handling videos.
 Here is what you might need.
 * GStreamer
   * Linux
-      If you are using ubuntu 13.04 (and derivative), it should be ok,
+      If you are using ubuntu 13.04 or later (and derivative), it should be ok,
       GStreamer should be found by default.
       
       If you are using ubuntu version 12.10 or older, please install
