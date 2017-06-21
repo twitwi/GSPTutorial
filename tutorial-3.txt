@@ -19,7 +19,7 @@ You can also have a look at the pipeline (both the sources and the visualization
    pipelines/pipeline-2-view-video.xml
    pipelines/pipeline-2-view-video.xml.svg
 
-((Please note that if you see and the moving box is red, then something needs to be done, but for now you can continue like this.))
+((Please note that if you see the video and the moving box is red, then something needs to be done, but for now you can continue like this.))
 
 
 Playing with the pipeline
@@ -40,8 +40,8 @@ Maybe, you can play from a webcam:
 And, you can even play streaming videos:
 
    # "despicable me" video
-   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/youtube-dl -g D_dvETGxO3w)
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/bin/youtube-dl -g 6emgoLXHbjk)
 
    # keyboard madness video
-   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/youtube-dl -g iJ9wNT21c_s)
+   ./run.sh pipelines/pipeline-2-view-video.xml   for.period=1 view.exitOnClose=true in.uri=$(youtube-dl/bin/youtube-dl -g iJ9wNT21c_s)
 
